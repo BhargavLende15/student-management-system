@@ -13,9 +13,12 @@ public class StudentMapper {
                 .rollNo(studentInfo.getRollNo())
                 .name(studentInfo.getName())
                 .email(studentInfo.getEmail())
+                .mobileNumber(studentInfo.getMobileNumber())
                 .department(studentInfo.getDepartment())
                 .gender(studentInfo.getGender())
                 .course(studentInfo.getCourse())
+                .dateOfBirth(studentInfo.getDateOfBirth())
+                .address(studentInfo.getAddress())
                 .build();
     }
     public  StudentInfo toEntity(StudentDetails studentDetails) {
@@ -24,9 +27,12 @@ public class StudentMapper {
                 .rollNo(studentDetails.getRollNo())
                 .name(studentDetails.getName())
                 .email(studentDetails.getEmail())
+                .mobileNumber(studentDetails.getMobileNumber())
                 .department(studentDetails.getDepartment())
                 .gender(studentDetails.getGender())
                 .course(studentDetails.getCourse())
+                .dateOfBirth(studentDetails.getDateOfBirth())
+                .address(studentDetails.getAddress())
                 .build();
     }
 }

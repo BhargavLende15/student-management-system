@@ -44,12 +44,17 @@ public class StudentServiceImpl implements StudentService{
     }
 
     @Override
-    public StudentDetails updateStudentById(StudentDetails studentdetails) {
+    public StudentDetails updateStudentById(StudentDetails studentDetails) {
+        Optional<StudentInfo> existingStudent = studentRepository.findById(studentDetails.getId());
+        if (existingStudent.isPresent()) {
+            StudentInfo updatedStudent = studentRepository.save(studentMapper.toEntity(studentDetails));
+            return studentMapper.toDto(updatedStudent);
+        }
         return null;
     }
 
     @Override
-    public void deleteStudentById(StudentDetails studentdetails) {
-
+    public void deleteStudentById(StudentDetails studentDetails) {
+        studentRepository.deleteById(studentDetails.getId());
     }
 }
